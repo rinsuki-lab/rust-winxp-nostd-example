@@ -15,5 +15,7 @@ pub extern "C" fn main(_argc: core::ffi::c_int, _argv: *const *const core::ffi::
 
 #[panic_handler]
 unsafe fn panic(info: &core::panic::PanicInfo) -> ! {
-    ExitProcess(0x1)
+    unsafe {
+        ExitProcess(0x1)
+    }
 }

@@ -9,3 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v5
     - run: cargo build --target i686-pc-windows-msvc --release
+    - uses: actions/upload-artifact@v4
+      with:
+        name: rust-winxp-nostd-example-release
+        path: target/i686-pc-windows-msvc/release/rust-winxp-nostd-example.exe
